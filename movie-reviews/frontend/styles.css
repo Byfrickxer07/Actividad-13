@@ -1,0 +1,9 @@
+/* styles.css: Puedes agregar estilos personalizados aquí si lo necesitas */
+
+/* Ejemplo: Centrar el modal verticalmente en pantallas pequeñas */
+@media (max-width: 640px) {
+  #reviewModal > div {
+    width: 95vw;
+    padding: 1rem;
+  }
+}

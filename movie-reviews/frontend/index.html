@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Reviews</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+  <header class="bg-blue-700 text-white p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Movie Reviews</h1>
+    <div>
+      <a href="login.html" class="mr-4 hover:underline">Iniciar sesión</a>
+      <a href="register.html" class="hover:underline">Registrarse</a>
+    </div>
+  </header>
+  <main class="flex-1 p-4">
+    <div class="mb-4 flex flex-wrap gap-4">
+      <select id="genreFilter" class="p-2 rounded border">
+        <option value="">Todos los géneros</option>
+      </select>
+      <select id="ratingFilter" class="p-2 rounded border">
+        <option value="">Todas las puntuaciones</option>
+        <option value="5">5 estrellas</option>
+        <option value="4">4 estrellas o más</option>
+        <option value="3">3 estrellas o más</option>
+        <option value="2">2 estrellas o más</option>
+        <option value="1">1 estrella o más</option>
+      </select>
+    </div>
+    <div id="moviesGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Películas aquí -->
+    </div>
+  </main>
+  <footer class="bg-blue-700 text-white text-center p-2">Proyecto EEST N.º 1 – “Eduardo Ader”</footer>
+
+  <!-- Modal de Reseña -->
+  <div id="reviewModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white p-6 rounded shadow-lg w-full max-w-md">
+      <h2 class="text-xl font-bold mb-4">Agregar Reseña</h2>
+      <form id="reviewForm" class="space-y-4">
+        <input type="hidden" id="modalMovieId">
+        <div>
+          <label for="rating" class="block mb-1">Puntuación:</label>
+          <select id="rating" class="w-full p-2 border rounded" required>
+            <option value="">Selecciona una puntuación</option>
+            <option value="1">1 estrella</option>
+            <option value="2">2 estrellas</option>
+            <option value="3">3 estrellas</option>
+            <option value="4">4 estrellas</option>
+            <option value="5">5 estrellas</option>
+          </select>
+        </div>
+        <div>
+          <label for="comment" class="block mb-1">Comentario:</label>
+          <textarea id="comment" class="w-full p-2 border rounded" rows="3" required></textarea>
+        </div>
+        <div class="flex justify-end gap-2">
+          <button type="button" id="closeModalBtn" class="px-4 py-2 bg-gray-300 rounded">Cancelar</button>
+          <button type="submit" class="px-4 py-2 bg-blue-700 text-white rounded">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
