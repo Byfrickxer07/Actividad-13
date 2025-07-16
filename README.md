@@ -102,4 +102,3 @@ Tabla: reviews
 
 ---
 
-¡Listo! Ahora puedes disfrutar de tu plataforma Movie Reviews.
